@@ -12,7 +12,7 @@ export default function Marker({ place }: { place: Place }) {
     unlockPlace(place.id, place.cost)
   }
 
-  const showUnlockButton = currentUser?.unlockedPlaces?.includes(place.id) === false;
+  const showUnlockButton = currentUser?.unlockedPlaces.includes(place.id) === false;
 
   return (
     <LeafletMarker position={[place.location.latitude, place.location.longitude]}>
