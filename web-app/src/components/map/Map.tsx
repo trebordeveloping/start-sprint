@@ -21,8 +21,8 @@ L.Icon.Default.mergeOptions({
 
 export default function Map() {
 
-  const [mapCenter, setMapCenter] = useState<[number, number]>([48.1351, 11.5820]); // Munich, Germany
-  const [mapZoom, setMapZoom] = useState(13);
+  const [mapCenter, _setMapCenter] = useState<[number, number]>([48.1351, 11.5820]); // Munich, Germany
+  const [mapZoom, _setMapZoom] = useState(13);
 
   const { currentUser } = useUser();
 
