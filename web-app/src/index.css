@@ -1,5 +1,55 @@
 @import "tailwindcss";
 
+/* Custom Leaflet Popup Styles to match app design */
+.leaflet-popup {
+  margin-bottom: 20px;
+}
+
+.leaflet-popup-content-wrapper {
+  background: transparent !important;
+  border-radius: 16px !important;
+  border: none !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+  padding: 0 !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+
+.leaflet-popup-tip {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(229, 231, 235, 1) !important;
+  backdrop-filter: blur(4px);
+}
+
+.leaflet-popup-close-button {
+  color: #6b7280 !important;
+  font-size: 18px !important;
+  padding: 8px !important;
+  top: 8px !important;
+  right: 8px !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(229, 231, 235, 1) !important;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.leaflet-popup-close-button:hover {
+  background: rgba(255, 255, 255, 1) !important;
+  color: #f97316 !important;
+  transform: scale(1.1) !important;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

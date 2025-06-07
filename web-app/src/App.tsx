@@ -11,6 +11,8 @@ import {
 import Home from './pages/Home';
 import Map from './pages/Map';
 
+import { UserProvider } from './contexts/UserContext';
+
 export default function App() {
 
   const router = createBrowserRouter(createRoutesFromElements(
@@ -21,7 +23,9 @@ export default function App() {
   ))
 
   return (
-    <RouterProvider router={router} />
+    <UserProvider>
+      <RouterProvider router={router} />
+    </UserProvider>
   )
 }
 

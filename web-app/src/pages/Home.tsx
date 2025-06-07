@@ -1,9 +1,24 @@
 
 import { NavLink } from "react-router";
+import Login from "../components/home/Login";
+import Credits from "../components/Credits";
+
+import { useUser } from "../contexts/UserContext";
 
 export default function Home() {
+
+  const { currentUser } = useUser();
+
   return (
-    <div className="h-screen w-screen bg-gradient-to-br from-orange-50 to-orange-100 overflow-y-auto">
+    <div className="h-screen w-screen bg-gradient-to-br from-orange-50 to-orange-100 overflow-y-auto">      {/* Top Navigation Bar */}
+      <div className="absolute top-0 right-0 p-6 z-10">
+        {currentUser ? (
+          <Credits />
+        ) : (
+          <Login />
+        )}
+      </div>
+      
       {/* Hero Section */}
       <div className="flex flex-col items-center justify-center h-screen px-4 text-center">
         <div className="max-w-4xl mx-auto">
