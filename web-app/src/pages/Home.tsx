@@ -30,7 +30,7 @@ export default function Home() {
           </p>
           <NavLink 
             to="/map" 
-            className="inline-block px-8 py-4 bg-orange-500 text-white text-lg font-semibold rounded-full shadow-2xl hover:bg-orange-600 hover:text-white hover:scale-105 transform transition-all duration-300 ease-in-out"
+            className="inline-block px-8 py-4 bg-orange-500 text-white text-lg font-semibold rounded-full shadow-2xl hover:bg-orange-600 hover:!text-white hover:scale-105 transform transition-all duration-300 ease-in-out"
           >
             Explore the Map →
           </NavLink>

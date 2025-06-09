@@ -8,5 +8,6 @@ export const users: User[] = [
     email: 'marcelo@startmunich.de',
     credits: 150,
     unlockedPlaces: [],
+    recentPlaces: [],
   },
 ]

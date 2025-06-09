@@ -25,9 +25,8 @@ export default function Map() {
   const [mapZoom, _setMapZoom] = useState(13);
 
   const { currentUser } = useUser();
-
   return (
-    <div className="flex-1 relative">
+    <div className="flex-1 relative order-1 md:order-2">
       {/* Leaflet Map Container */}
       <MapContainer
         center={mapCenter}
