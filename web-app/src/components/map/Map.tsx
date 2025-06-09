@@ -5,9 +5,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 import Marker from './Marker';
-import Credits from '../Credits';
 import ZoomControls from './ZoomControls';
-import { useUser } from '../../contexts/UserContext';
 import { places } from '../../data/places';
 
 // Fix for default markers in react-leaflet
@@ -23,7 +21,6 @@ export default function Map() {
   const defaultCenter: [number, number] = [48.1351, 11.5820]; // Munich, Germany
   const defaultZoom = 13;
 
-  const { currentUser } = useUser();
   return (
     <div className="flex-1 relative order-1 md:order-2">
       {/* Leaflet Map Container */}
@@ -42,13 +39,6 @@ export default function Map() {
         {places.map(place => (
           <Marker key={place.id} place={place} />
         ))}
-
-        {/* Credits with proper positioning for Leaflet map */}
-        <div className="absolute top-4 right-4 z-[1000]">
-          {currentUser && (
-            <Credits />
-          )}
-        </div>
         
         <ZoomControls center={defaultCenter} zoom={defaultZoom} />
         

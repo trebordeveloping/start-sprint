@@ -77,7 +77,7 @@ export default function Marker({ place }: { place: Place }) {
                 📍 {place.location.city}, {place.location.country}
               </div>
               <div className="flex items-center space-x-2">
-                {isUnlocked ? (
+                {currentUser && (isUnlocked ? (
                   <button
                     className="px-4 py-2 !bg-orange-500 text-white text-sm font-semibold rounded-full hover:!bg-orange-600 transform hover:scale-105 transition-all duration-300 shadow-lg"
                     onClick={() => window.open(place.location.googleMapsUrl, '_blank')}
@@ -97,7 +97,7 @@ export default function Marker({ place }: { place: Place }) {
                   >
                     {place.cost} credits
                   </button>
-                )}
+                ))}
               </div>
             </div>
           </div>
