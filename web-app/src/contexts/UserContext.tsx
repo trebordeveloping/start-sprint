@@ -7,6 +7,7 @@ import React, {
 } from 'react';
 
 import type { User } from '../utils/types';
+import { newUpdate } from '../utils/newUpdate';
 import { users } from '../data/users';
 
 const UserContext = createContext<{
@@ -27,6 +28,14 @@ export function useUser() {
   return useContext(UserContext);
 }
 
+const isUserExpired = (lastLoggedIn: string | null): boolean => {
+  if (!lastLoggedIn) return true; // No last login means expired
+
+  const lastLoginDate = new Date(lastLoggedIn);
+  
+  return lastLoginDate < newUpdate;
+}
+
 export function UserProvider({ children }: { children: React.ReactNode }) {
 
   const [currentUser, setCurrentUser] = useState<User | null>(null);
@@ -34,13 +43,15 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
   // 🧠 Load user from localStorage on first mount
   useEffect(() => {
     try {
+      const lastLoggedInStr = localStorage.getItem('lastLoggedIn');
       const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
       const storedUser = localStorage.getItem('user');
-      if (isLoggedIn && storedUser) {
+      if (isLoggedIn && storedUser && !isUserExpired(lastLoggedInStr)) {
         setCurrentUser(JSON.parse(storedUser));
       }
     } catch (err) {
       console.warn("Invalid user data in localStorage");
+      localStorage.removeItem('lastLoggedIn');
       localStorage.removeItem('isLoggedIn');
       localStorage.removeItem('user');
     }
@@ -71,13 +82,14 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
 
   const login = () => {
     const storedUser = localStorage.getItem('user');
-    if (storedUser) {
+    if (storedUser && !isUserExpired(localStorage.getItem('lastLoggedIn'))) {
       setCurrentUser(JSON.parse(storedUser));
     } else {
       // If no user is stored, set a default fake user
       setCurrentUser(users[0] || null);
     }
     localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('lastLoggedIn', new Date().toISOString());
   }
 
   const logout = () => {
