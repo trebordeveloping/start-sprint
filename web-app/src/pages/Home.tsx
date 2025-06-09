@@ -1,6 +1,6 @@
 
 import { NavLink } from "react-router";
-import Login from "../Login";
+import Login from "../components/Login";
 import Credits from "../components/Credits";
 
 import { useUser } from "../contexts/UserContext";

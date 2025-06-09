@@ -5,7 +5,7 @@ import Sidebar from '../components/map/Sidebar';
 import MapComponent from '../components/map/Map';
 import Drawer from '../components/map/Drawer';
 import Credits from '../components/Credits';
-import Login from '../Login';
+import Login from '../components/Login';
 
 import { useUser } from '../contexts/UserContext';
 
