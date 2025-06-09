@@ -1,6 +1,5 @@
 
 
-import { useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -21,16 +20,16 @@ L.Icon.Default.mergeOptions({
 
 export default function Map() {
 
-  const [mapCenter, _setMapCenter] = useState<[number, number]>([48.1351, 11.5820]); // Munich, Germany
-  const [mapZoom, _setMapZoom] = useState(13);
+  const defaultCenter: [number, number] = [48.1351, 11.5820]; // Munich, Germany
+  const defaultZoom = 13;
 
   const { currentUser } = useUser();
   return (
     <div className="flex-1 relative order-1 md:order-2">
       {/* Leaflet Map Container */}
       <MapContainer
-        center={mapCenter}
-        zoom={mapZoom}
+        center={defaultCenter}
+        zoom={defaultZoom}
         style={{ height: '100%', width: '100%' }}
         zoomControl={false} // We'll use custom zoom controls
       >
@@ -51,7 +50,7 @@ export default function Map() {
           )}
         </div>
         
-        <ZoomControls />
+        <ZoomControls center={defaultCenter} zoom={defaultZoom} />
         
       </MapContainer>
     </div>
