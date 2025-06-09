@@ -34,12 +34,14 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
   // 🧠 Load user from localStorage on first mount
   useEffect(() => {
     try {
+      const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
       const storedUser = localStorage.getItem('user');
-      if (storedUser) {
+      if (isLoggedIn && storedUser) {
         setCurrentUser(JSON.parse(storedUser));
       }
     } catch (err) {
       console.warn("Invalid user data in localStorage");
+      localStorage.removeItem('isLoggedIn');
       localStorage.removeItem('user');
     }
   }, []);
@@ -75,10 +77,12 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       // If no user is stored, set a default fake user
       setCurrentUser(users[0] || null);
     }
+    localStorage.setItem('isLoggedIn', 'true');
   }
 
   const logout = () => {
     setCurrentUser(null);
+    localStorage.removeItem('isLoggedIn');
   }
 
   const unlockPlace = (placeId: string, cost: number) => {
