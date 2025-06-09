@@ -4,8 +4,8 @@ import type { User } from '../utils/types';
 export const users: User[] = [
   {
     id: '1',
-    name: 'Startie',
-    email: 'guest@startmunich.de',
+    name: 'Guest',
+    email: 'guest@example.com',
     credits: 150,
     unlockedPlaces: [], // Guest user starts with no unlocked places
     recentPlaces: [], // Guest user starts with no recent places

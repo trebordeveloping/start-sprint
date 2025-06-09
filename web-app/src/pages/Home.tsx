@@ -22,8 +22,8 @@ export default function Home() {
       {/* Hero Section */}
       <div className="flex flex-col items-center justify-center h-screen px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-800 mb-6 drop-shadow-lg">
-            Start Sprint
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-800 mb-6 drop-shadow-lg italic">
+            XPLORA
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
             Discover amazing locations and embark on your next adventure with our interactive mapping experience
