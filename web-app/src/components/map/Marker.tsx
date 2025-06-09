@@ -1,5 +1,6 @@
 import { Marker as LeafletMarker, Popup } from 'react-leaflet';
 import L from 'leaflet';
+import { useState, useEffect } from 'react';
 
 import type { Place } from '../../utils/types';
 import { useUser } from '../../contexts/UserContext';
@@ -7,12 +8,26 @@ import { useUser } from '../../contexts/UserContext';
 export default function Marker({ place }: { place: Place }) {
 
   const { currentUser, unlockPlace } = useUser();
+  const [isRevealing, setIsRevealing] = useState(false);
+  const [wasUnlocked, setWasUnlocked] = useState(false);
 
   const unlock = (place: Place) => {
     unlockPlace(place.id, place.cost)
   }
 
   const isUnlocked = currentUser?.unlockedPlaces.includes(place.id) || false;
+
+  // Trigger reveal animation when place gets unlocked
+  useEffect(() => {
+    if (!wasUnlocked && isUnlocked) {
+      setIsRevealing(true);
+      // Reset animation state after animation completes
+      setTimeout(() => {
+        setIsRevealing(false);
+      }, 1500);
+    }
+    setWasUnlocked(isUnlocked);
+  }, [isUnlocked, wasUnlocked]);
   // Create custom marker icons based on unlock status
   const createCustomIcon = (isUnlocked: boolean) => {
     const color = isUnlocked ? '#10B981' : '#F97316'; // Green for unlocked, Orange for locked
@@ -63,10 +78,12 @@ export default function Marker({ place }: { place: Place }) {
       </svg>
     </button>
   )
-
   const UnlockButton = () => (
     <button
-      onClick={() => unlock(place)}
+      onClick={(e) => {
+        e.stopPropagation();
+        unlock(place);
+      }}
       className="px-4 py-2 !bg-orange-500 text-white text-sm font-semibold rounded-full hover:!bg-orange-600 transform hover:scale-105 transition-all duration-300 shadow-lg"
     >
       {place.cost} credits
@@ -84,15 +101,36 @@ export default function Marker({ place }: { place: Place }) {
         maxWidth={320}
       >
         <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 shadow-2xl">
+
           <div className="mb-4">
             <img
               src={place.imageUrl}
               alt={place.name}
               className="w-full h-40 object-cover rounded-xl shadow-lg"
             />
+            {isRevealing && (
+              <div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/80 to-transparent transform -translate-x-full animate-shimmer"
+                style={{
+                  animation: 'shimmer 1.5s ease-out forwards'
+                }}
+              />
+            )}
           </div>
           <div className="space-y-3">
-            <h3 className={`text-xl font-bold text-gray-800 ${!isUnlocked ? 'blur-sm' : ''}`}>{place.name}</h3>
+
+            <h3
+              className={`text-xl font-bold text-gray-800 transition-all duration-1000 ease-out ${!isUnlocked ? 'blur-sm' : ''
+                } ${isRevealing ? 'animate-pulse' : ''
+                }`}
+              style={{
+                animation: isRevealing ? 'revealText 1.5s ease-out forwards' : undefined
+              }}
+            >
+              {place.name}
+            </h3>
+
+
             <p className="text-gray-600 leading-relaxed">{place.description}</p>
 
             <div className="flex items-center justify-between pt-2">
