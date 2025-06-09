@@ -9,7 +9,7 @@ export default function Login() {
   return (
     <button
       onClick={login}
-      className="group relative inline-flex items-center px-6 py-3 bg-white/90 backdrop-blur-sm text-gray-800 font-semibold rounded-full border border-gray-200/50 shadow-lg hover:bg-white hover:shadow-xl hover:scale-105 transform transition-all duration-300 ease-in-out"
+      className="group relative inline-flex items-center px-6 py-3 bg-white/90 backdrop-blur-sm text-gray-800 font-semibold rounded-full border border-gray-200/50 shadow-lg hover:bg-white hover:shadow-xl hover:scale-102 transform transition-all duration-500 ease-in"
     >
       {/* User Icon */}
       <svg
