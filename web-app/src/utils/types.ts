@@ -20,6 +20,7 @@ export interface Place {
     street: string;
     city: string;
     country: string;
+    googleMapsUrl: string; // URL to Google Maps location
   };
   imageUrl: string;
   reviews?: Review[]; // Optional reviews
