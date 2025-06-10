@@ -1,5 +1,4 @@
 
-
 import { MapContainer, TileLayer } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -41,6 +40,7 @@ export default function Map() {
         ))}
         
         <ZoomControls center={defaultCenter} zoom={defaultZoom} />
+
         
       </MapContainer>
     </div>

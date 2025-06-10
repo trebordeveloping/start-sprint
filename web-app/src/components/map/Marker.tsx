@@ -1,19 +1,31 @@
+
 import { Marker as LeafletMarker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import { useState, useEffect } from 'react';
 
+import ReviewModal from './Review';
+
 import type { Place } from '../../utils/types';
 import { useUser } from '../../contexts/UserContext';
 
-export default function Marker({ place }: { place: Place }) {
+export default function Marker({ place }: {
+  place: Place,
+}) {
 
   const { currentUser, unlockPlace } = useUser();
   const [isRevealing, setIsRevealing] = useState(false);
   const [wasUnlocked, setWasUnlocked] = useState(false);
 
+  const [isReviewing, setIsReviewing] = useState(false);
+  const startReview = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsReviewing(true);
+  }
+
   const unlock = (place: Place) => {
     unlockPlace(place.id, place.cost)
   }
+
 
   const isUnlocked = currentUser?.unlockedPlaces.includes(place.id) || false;
 
@@ -78,6 +90,20 @@ export default function Marker({ place }: { place: Place }) {
       </svg>
     </button>
   )
+  const ReviewButton = () => (
+    <button
+      className="px-4 py-2 !bg-orange-500 text-white text-sm font-semibold rounded-full hover:!bg-orange-600 transform hover:scale-105 transition-all duration-300 shadow-lg"
+      onClick={startReview}
+    >
+      <svg
+        className="w-5 h-5 text-white-500 hover:text-white-700 transition-colors"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+      </svg>
+    </button>
+  )
   const UnlockButton = () => (
     <button
       onClick={(e) => {
@@ -105,6 +131,12 @@ export default function Marker({ place }: { place: Place }) {
       position={[place.location.latitude, place.location.longitude]}
       icon={createCustomIcon(isUnlocked)}
     >
+      <ReviewModal
+        place={place}
+        visible={isReviewing}
+        setVisible={setIsReviewing}
+      />
+
       <Popup
         className="custom-popup"
         minWidth={280}
@@ -153,7 +185,10 @@ export default function Marker({ place }: { place: Place }) {
               </div>
               <div className="flex items-center space-x-2">
                 {currentUser && (isUnlocked ? (
-                  <GoogleMapsButton />
+                  <>
+                    <ReviewButton />
+                    <GoogleMapsButton />
+                  </>
                 ) : (
                   <UnlockButton />
                 ))}

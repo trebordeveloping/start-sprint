@@ -16,12 +16,14 @@ const UserContext = createContext<{
   login: () => void;
   logout: () => void;
   unlockPlace: (placeId: string, cost: number) => void;
+  submitReview: (placeId: string, rating: number, comment: string) => void;
 }>({
   currentUser: null,
   resetCreditsAndPlaces: () => {},
   login: () => {},
   logout: () => {},
   unlockPlace: () => {},
+  submitReview: () => {},
 });
 
 export function useUser() {
@@ -76,6 +78,8 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
         ...prev,
         credits: 150, // Reset to default credits
         unlockedPlaces: [], // Reset unlocked places
+        recentPlaces: [], // Reset recent places
+        reviews: [], // Reset reviews
       };
     });
   }
@@ -116,6 +120,27 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
 
     setCurrentUser(updatedUser);
   }
+
+  const submitReview = (placeId: string, rating: number, comment: string) => {
+    if (!currentUser) return;
+
+    const newReview = {
+      id: `${Date.now()}`, // Simple unique ID based on timestamp
+      userId: currentUser.id,
+      placeId,
+      rating,
+      comment,
+      createdAt: new Date(),
+    };
+
+    setCurrentUser(prev => {
+      if (!prev) return null;
+      return {
+        ...prev,
+        reviews: [...(prev.reviews || []), newReview],
+      };
+    });
+  }
   
   const value = {
     currentUser,
@@ -123,6 +148,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
     login,
     logout,
     unlockPlace,
+    submitReview,
   }
 
   return (

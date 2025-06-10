@@ -7,6 +7,7 @@ export interface User {
   credits: number;
   unlockedPlaces: string[]; // Array of place IDs the user has unlocked
   recentPlaces: string[]; // Array of place IDs the user has recently visited
+  reviews: Review[]; // Array of reviews written by the user
 }
 
 export interface Place {

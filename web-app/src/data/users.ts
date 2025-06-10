@@ -9,6 +9,7 @@ export const users: User[] = [
     credits: 150,
     unlockedPlaces: [], // Guest user starts with no unlocked places
     recentPlaces: [], // Guest user starts with no recent places
+    reviews: [], // Guest user starts with no reviews
   },
   {
     id: '2',
@@ -17,6 +18,7 @@ export const users: User[] = [
     credits: 130,
     unlockedPlaces: ['1', '2'], // Example of unlocked places
     recentPlaces: ['3'], // Example of recently visited places
+    reviews: [],
   },
   {
     id: '3',
@@ -25,6 +27,7 @@ export const users: User[] = [
     credits: 150,
     unlockedPlaces: [],
     recentPlaces: [],
+    reviews: [],
   },
   {
     id: '4',
@@ -33,5 +36,6 @@ export const users: User[] = [
     credits: 150,
     unlockedPlaces: [],
     recentPlaces: [],
+    reviews: [],
   },
 ]
