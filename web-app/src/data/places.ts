@@ -16,6 +16,10 @@ export const places: Place[] = [
       googleMapsUrl: 'https://maps.app.goo.gl/y4kGDM9avvF9FPQa8',
     },
     imageUrl: 'https://www.introducingmunich.com/f/alemania/munich/guia/marienplatz-m.jpg',
+    reviews: {
+      rating: 4.5,
+      total: '1.2k+',
+    },
   },
   {
     id: '2',
@@ -31,6 +35,10 @@ export const places: Place[] = [
       googleMapsUrl: 'https://maps.app.goo.gl/QRqRJdunYt4Z8Quc8',
     },
     imageUrl: 'https://www.muenchen.de/sites/default/files/styles/3_2_w1008/public/2022-07/lhm-e-garten-panorama.jpg.webp',
+    reviews: {
+      rating: 4.8,
+      total: '2.5k+',
+    },
   },
   {
     id: '3',
@@ -46,6 +54,10 @@ export const places: Place[] = [
       googleMapsUrl: 'https://maps.app.goo.gl/BJVLVpCjmutgmbgE6',
     },
     imageUrl: 'https://soisblessed.com/wp-content/uploads/2020/07/Daybar_Dutti.jpg',
+    reviews: {
+      rating: 4.7,
+      total: '800+',
+    },
   },
   {
     id: '4',
@@ -61,6 +73,10 @@ export const places: Place[] = [
       googleMapsUrl: 'https://maps.app.goo.gl/hHnoFsccNRwUwtSc6',
     },
     imageUrl: 'https://www.sueddeutsche.de/2022/06/07/e0dd887a-f94d-498e-8214-ea6f81924d13.jpeg?q=60&fm=jpeg&width=1000&rect=0%2C139%2C1352%2C760',
+    reviews: {
+      rating: 4.9,
+      total: '1.5k+',
+    },
   },
   {
     id: '5',
@@ -76,6 +92,10 @@ export const places: Place[] = [
       googleMapsUrl: 'https://maps.app.goo.gl/itGGSKtmugKpQyBQA',
     },
     imageUrl: 'https://www.champor.de/fileadmin/user_upload/Champor/Impressionen/Champor-Impressionen-2020-03.jpg',
+    reviews: {
+      rating: 4.6,
+      total: '600+',
+    },
   },
   {
     id: '6',
@@ -91,5 +111,9 @@ export const places: Place[] = [
       googleMapsUrl: 'https://maps.app.goo.gl/Bj46V6gRuEsaBqoe9',
     },
     imageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjiU-uhH2UMyggpvrDQAAFzBod3Xe6TFSZLzlQfkz4mFmem5eGbTVpKQaYsDXVopBbcNr8mglU2U_sWV_1HF7AGXSdqq6ojdmfmByPWOFfBbNWEG7zCgC4f3-xcKLc-lq-NrEEoDqqSAD4I/s640/Parabelrutsche++Parabole+Slide+Munchen+Munich+University+Technical+1.jpg',
+    reviews: {
+      rating: 4.3,
+      total: '300+',
+    },
   }
 ];

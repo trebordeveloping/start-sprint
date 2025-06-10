@@ -23,7 +23,10 @@ export interface Place {
     googleMapsUrl: string; // URL to Google Maps location
   };
   imageUrl: string;
-  reviews?: Review[]; // Optional reviews
+  reviews?: {
+    rating: number;
+    total: string; // Total number of reviews as a string (e.g., "1.2k")
+  }
 }
 
 export interface Review {
@@ -32,5 +35,5 @@ export interface Review {
   placeId: string;
   rating: number;
   comment: string;
-  createdAt: string; // ISO date string
+  createdAt: Date;
 }

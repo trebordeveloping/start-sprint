@@ -90,6 +90,16 @@ export default function Marker({ place }: { place: Place }) {
     </button>
   )
 
+  const Rating = () => {
+    return (
+      <div className="absolute bottom-1 right-1 bg-white/90 rounded-full px-3 py-1 shadow-md flex items-baseline gap-1">
+        <span className="text-yellow-500 text-lg">★</span>
+        <span className="text-gray-800 font-semibold align-middle leading-none">{place.reviews?.rating}</span>
+        <span className="text-gray-500 text-sm ml-1 align-middle leading-none">({place.reviews?.total})</span>
+      </div>
+    );
+  }
+
   return (
     <LeafletMarker
       position={[place.location.latitude, place.location.longitude]}
@@ -102,12 +112,16 @@ export default function Marker({ place }: { place: Place }) {
       >
         <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 shadow-2xl">
 
-          <div className="mb-4">
+          <div className="mb-4 relative">
+            {/* Rating display over image */}
             <img
               src={place.imageUrl}
               alt={place.name}
               className="w-full h-40 object-cover rounded-xl shadow-lg"
             />
+            {place.reviews && (<Rating />)}
+            {/* Shimmer effect for revealing */}
+            
             {isRevealing && (
               <div
                 className="absolute inset-0 bg-gradient-to-r from-transparent via-white/80 to-transparent transform -translate-x-full animate-shimmer"
