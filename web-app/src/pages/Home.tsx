@@ -22,12 +22,15 @@ export default function Home() {
       {/* Hero Section */}
       <div className="flex flex-col items-center justify-center h-screen px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-800 mb-6 drop-shadow-lg italic">
-            XPLORA
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+          
+          <img
+            src="/xplora_logo.png"
+            alt="XPLORA Logo"
+            className="w-96 h-auto md:w-196 md:h-auto mx-auto mb-12"
+          />
+          {/* <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
             Discover amazing locations and embark on your next adventure with our interactive mapping experience
-          </p>
+          </p> */}
           <NavLink 
             to="/map" 
             className="inline-block px-8 py-4 bg-orange-500 text-white text-lg font-semibold rounded-full shadow-2xl hover:bg-orange-600 hover:!text-white hover:scale-105 transform transition-all duration-300 ease-in-out"
