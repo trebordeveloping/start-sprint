@@ -2,8 +2,7 @@
 import { Marker as LeafletMarker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import { useState, useEffect } from 'react';
-
-import ReviewModal from './Review';
+import { useNavigate } from 'react-router';
 
 import type { Place } from '../../utils/types';
 import { useUser } from '../../contexts/UserContext';
@@ -16,10 +15,13 @@ export default function Marker({ place }: {
   const [isRevealing, setIsRevealing] = useState(false);
   const [wasUnlocked, setWasUnlocked] = useState(false);
 
-  const [isReviewing, setIsReviewing] = useState(false);
-  const startReview = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setIsReviewing(true);
+  const navigate = useNavigate();
+  const openPlace = () => {
+    navigate(`/${place.id}`, {
+      state: {
+        place,
+      },
+    });
   }
 
   const unlock = (place: Place) => {
@@ -90,10 +92,10 @@ export default function Marker({ place }: {
       </svg>
     </button>
   )
-  const ReviewButton = () => (
+  const OpenPlaceButton = () => (
     <button
       className="px-4 py-2 !bg-orange-500 text-white text-sm font-semibold rounded-full hover:!bg-orange-600 transform hover:scale-105 transition-all duration-300 shadow-lg"
-      onClick={startReview}
+      onClick={openPlace}
     >
       <svg
         className="w-5 h-5 text-white-500 hover:text-white-700 transition-colors"
@@ -131,11 +133,6 @@ export default function Marker({ place }: {
       position={[place.location.latitude, place.location.longitude]}
       icon={createCustomIcon(isUnlocked)}
     >
-      <ReviewModal
-        place={place}
-        visible={isReviewing}
-        setVisible={setIsReviewing}
-      />
 
       <Popup
         className="custom-popup"
@@ -186,7 +183,7 @@ export default function Marker({ place }: {
               <div className="flex items-center space-x-2">
                 {currentUser && (isUnlocked ? (
                   <>
-                    <ReviewButton />
+                    <OpenPlaceButton />
                     <GoogleMapsButton />
                   </>
                 ) : (

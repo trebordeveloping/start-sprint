@@ -7,7 +7,7 @@ export const reviews: Review[] = [
     placeId: '1',
     rating: 5,
     comment: 'A must-visit in Munich! The architecture is stunning and the atmosphere is vibrant.',
-    createdAt: new Date('2023-10-01'),
+    createdAt: new Date('2024-12-13'),
   },
   {
     id: 'b1a2c3d4-e5f6-7890-abcd-1234567890ab',
@@ -15,7 +15,7 @@ export const reviews: Review[] = [
     placeId: '1',
     rating: 4,
     comment: 'Great spot for people-watching and photos. Gets crowded but worth it!',
-    createdAt: new Date('2023-10-05'),
+    createdAt: new Date('2024-12-17'),
   },
   {
     id: 'c2d3e4f5-6789-0123-abcd-3456789012cd',
@@ -23,7 +23,7 @@ export const reviews: Review[] = [
     placeId: '1',
     rating: 5,
     comment: 'Absolutely loved the Glockenspiel show. A true Munich highlight!',
-    createdAt: new Date('2023-10-10'),
+    createdAt: new Date('2024-12-22'),
   },
   {
     id: 'd3e4f5g6-7890-1234-abcd-4567890123de',
@@ -31,7 +31,7 @@ export const reviews: Review[] = [
     placeId: '1',
     rating: 3,
     comment: 'Beautiful square but a bit too touristy for my taste.',
-    createdAt: new Date('2023-10-15'),
+    createdAt: new Date('2024-12-27'),
   },
   {
     id: 'e4f5g6h7-8901-2345-abcd-5678901234ef',
@@ -39,7 +39,7 @@ export const reviews: Review[] = [
     placeId: '1',
     rating: 5,
     comment: 'The heart of Munich! So much history and energy here.',
-    createdAt: new Date('2023-10-20'),
+    createdAt: new Date('2025-01-01'),
   },
   {
     id: 'f5g6h7i8-9012-3456-abcd-6789012345fa',
@@ -47,7 +47,7 @@ export const reviews: Review[] = [
     placeId: '1',
     rating: 4,
     comment: 'Loved the street performers and the lively atmosphere.',
-    createdAt: new Date('2023-10-25'),
+    createdAt: new Date('2025-01-06'),
   },
   {
     id: 'f3cbad70-a8ce-4520-8b91-03c5e1c30fec',
@@ -55,7 +55,7 @@ export const reviews: Review[] = [
     placeId: '2',
     rating: 5,
     comment: 'A beautiful escape from the city buzz. Perfect for a relaxing day out.',
-    createdAt: new Date('2023-10-02'),
+    createdAt: new Date('2024-12-14'),
   },
   {
     id: 'a1b2c3d4-e5f6-7890-abcd-2234567890ab',
@@ -63,7 +63,7 @@ export const reviews: Review[] = [
     placeId: '2',
     rating: 5,
     comment: 'Such a peaceful park! Loved walking by the river and watching the surfers.',
-    createdAt: new Date('2023-10-06'),
+    createdAt: new Date('2024-12-18'),
   },
   {
     id: 'b2c3d4e5-f6a7-8901-bcde-3345678901bc',
@@ -71,7 +71,7 @@ export const reviews: Review[] = [
     placeId: '2',
     rating: 4,
     comment: 'Great for a picnic or a bike ride. The beer garden is a must-visit!',
-    createdAt: new Date('2023-10-12'),
+    createdAt: new Date('2024-12-24'),
   },
   {
     id: 'c3d4e5f6-a7b8-9012-cdef-4456789012cd',
@@ -79,7 +79,7 @@ export const reviews: Review[] = [
     placeId: '2',
     rating: 5,
     comment: 'Huge park with lots of hidden gems. Perfect for families and solo travelers alike.',
-    createdAt: new Date('2023-10-18'),
+    createdAt: new Date('2024-12-30'),
   },
   {
     id: 'd4e5f6a7-b8c9-0123-def0-5567890123de',
@@ -87,7 +87,7 @@ export const reviews: Review[] = [
     placeId: '2',
     rating: 4,
     comment: 'Loved the open spaces and the English-style landscaping. Very relaxing.',
-    createdAt: new Date('2023-10-22'),
+    createdAt: new Date('2025-01-03'),
   },
   {
     id: 'e5f6a7b8-c9d0-1234-ef01-6678901234ef',
@@ -95,7 +95,7 @@ export const reviews: Review[] = [
     placeId: '2',
     rating: 5,
     comment: 'A green oasis in the city. The Japanese teahouse was a highlight for me.',
-    createdAt: new Date('2023-10-28'),
+    createdAt: new Date('2025-01-09'),
   },
   {
     id: 'a68a6b4d-9c65-46f6-a7ea-1b394aa55270',
@@ -103,7 +103,7 @@ export const reviews: Review[] = [
     placeId: '3',
     rating: 5,
     comment: 'A hidden gem in the city! The food is amazing and the atmosphere is cozy.',
-    createdAt: new Date('2023-10-03'),
+    createdAt: new Date('2024-12-15'),
   },
   {
     id: 'b7c8d9e0-f1a2-3456-bcde-778899001122',
@@ -111,7 +111,7 @@ export const reviews: Review[] = [
     placeId: '3',
     rating: 5,
     comment: 'Absolutely loved the brunch here! The pastries are to die for.',
-    createdAt: new Date('2023-10-07'),
+    createdAt: new Date('2024-12-19'),
   },
   {
     id: 'c8d9e0f1-a2b3-4567-cdef-889900112233',
@@ -119,7 +119,7 @@ export const reviews: Review[] = [
     placeId: '3',
     rating: 4,
     comment: 'Cozy atmosphere and friendly staff. Coffee was excellent!',
-    createdAt: new Date('2023-10-11'),
+    createdAt: new Date('2024-12-23'),
   },
   {
     id: 'd9e0f1a2-b3c4-5678-def0-990011223344',
@@ -127,7 +127,7 @@ export const reviews: Review[] = [
     placeId: '3',
     rating: 5,
     comment: 'Perfect spot for a quiet afternoon. The desserts are amazing.',
-    createdAt: new Date('2023-10-15'),
+    createdAt: new Date('2024-12-27'),
   },
   {
     id: 'e0f1a2b3-c4d5-6789-ef01-001122334455',
@@ -135,7 +135,7 @@ export const reviews: Review[] = [
     placeId: '3',
     rating: 4,
     comment: 'Great vegan options and a lovely selection of teas.',
-    createdAt: new Date('2023-10-19'),
+    createdAt: new Date('2025-01-01'),
   },
   {
     id: 'f1a2b3c4-d5e6-7890-f012-112233445566',
@@ -143,7 +143,7 @@ export const reviews: Review[] = [
     placeId: '3',
     rating: 5,
     comment: 'Came here with friends and everyone loved their food. Will be back!',
-    createdAt: new Date('2023-10-23'),
+    createdAt: new Date('2025-01-05'),
   },
   {
     id: '71414d84-eda9-4a75-80f0-b483e07f6830',
@@ -151,7 +151,7 @@ export const reviews: Review[] = [
     placeId: '4',
     rating: 5,
     comment: 'The pastries are authentic and delicious! A true taste of France in Munich.',
-    createdAt: new Date('2023-10-04'),
+    createdAt: new Date('2024-12-16'),
   },
   {
     id: '82425e95-fbb0-4b86-9c1d-2c3d4e5f6a7b',
@@ -159,7 +159,7 @@ export const reviews: Review[] = [
     placeId: '4',
     rating: 5,
     comment: 'Charming little bakery with a great selection of pastries and coffee.',
-    createdAt: new Date('2023-10-08'),
+    createdAt: new Date('2024-12-20'),
   },
   {
     id: '93536f06-gcc1-5c97-a2e2-3d4e5f6a7b8c',
@@ -167,7 +167,7 @@ export const reviews: Review[] = [
     placeId: '4',
     rating: 4,
     comment: 'Lovely atmosphere and friendly staff. The croissants are a must-try!',
-    createdAt: new Date('2023-10-12'),
+    createdAt: new Date('2024-12-24'),
   },
   {
     id: '04647g18-hdd2-6d08-b3f3-4e5f6a7b8c9d',
@@ -175,7 +175,7 @@ export const reviews: Review[] = [
     placeId: '4',
     rating: 5,
     comment: 'A delightful French bakery! The éclairs are heavenly.',
-    createdAt: new Date('2023-10-16'),
+    createdAt: new Date('2024-12-28'),
   },
   {
     id: '15758h29-iee3-7e19-c4g4-5f6a7b8c9d0e',
@@ -183,7 +183,7 @@ export const reviews: Review[] = [
     placeId: '4',
     rating: 4,
     comment: 'Great place for breakfast or an afternoon treat. Highly recommend!',
-    createdAt: new Date('2023-10-20'),
+    createdAt: new Date('2025-01-01'),
   },
   {
     id: '26869i30-jff4-8f2a-d5h5-6a7b8c9d0e1f',
@@ -191,7 +191,7 @@ export const reviews: Review[] = [
     placeId: '5',
     rating: 5,
     comment: 'The curries are bursting with flavor! Felt like a home-cooked meal in Malaysia.',
-    createdAt: new Date('2023-10-08'),
+    createdAt: new Date('2024-12-20'),
   },
   {
     id: 'a5b6c7d8-e9f0-1234-abcd-223344556677',
@@ -199,7 +199,7 @@ export const reviews: Review[] = [
     placeId: '5',
     rating: 5,
     comment: 'The curries are bursting with flavor! Felt like a home-cooked meal in Malaysia.',
-    createdAt: new Date('2023-10-08'),
+    createdAt: new Date('2024-12-20'),
   },
   {
     id: 'b6c7d8e9-f012-2345-bcde-334455667788',
@@ -207,7 +207,7 @@ export const reviews: Review[] = [
     placeId: '5',
     rating: 4,
     comment: 'Cozy atmosphere and super friendly staff. The laksa was my favorite!',
-    createdAt: new Date('2023-10-13'),
+    createdAt: new Date('2024-12-25'),
   },
   {
     id: 'c7d8e9f0-1234-3456-cdef-445566778899',
@@ -215,7 +215,7 @@ export const reviews: Review[] = [
     placeId: '5',
     rating: 5,
     comment: 'Authentic Malaysian food in Munich! Highly recommend the beef rendang.',
-    createdAt: new Date('2023-10-17'),
+    createdAt: new Date('2024-12-29'),
   },
   {
     id: 'd8e9f012-3456-4567-def0-556677889900',
@@ -223,7 +223,7 @@ export const reviews: Review[] = [
     placeId: '5',
     rating: 4,
     comment: 'Great value for money and the portions are generous. Will come again!',
-    createdAt: new Date('2023-10-21'),
+    createdAt: new Date('2025-01-02'),
   },
   {
     id: 'e9f01234-5678-5678-ef01-667788990011',
@@ -231,7 +231,7 @@ export const reviews: Review[] = [
     placeId: '5',
     rating: 5,
     comment: 'Felt like dining with family. The sambal was spicy and delicious!',
-    createdAt: new Date('2023-10-27'),
+    createdAt: new Date('2025-01-08'),
   },
   {
     id: 'f2a3b4c5-d6e7-8901-abcd-778899001122',
@@ -239,7 +239,7 @@ export const reviews: Review[] = [
     placeId: '6',
     rating: 5,
     comment: 'The slide is so much fun! A must-try if you visit TUM Garching.',
-    createdAt: new Date('2023-10-09'),
+    createdAt: new Date('2024-12-21'),
   },
   {
     id: 'a3b4c5d6-e7f8-9012-bcde-889900112233',
@@ -247,7 +247,7 @@ export const reviews: Review[] = [
     placeId: '6',
     rating: 4,
     comment: 'Unique experience! The architecture is impressive and the ride is thrilling.',
-    createdAt: new Date('2023-10-14'),
+    createdAt: new Date('2024-12-26'),
   },
   {
     id: 'b4c5d6e7-f890-1234-cdef-990011223344',
@@ -255,7 +255,7 @@ export const reviews: Review[] = [
     placeId: '6',
     rating: 5,
     comment: 'Great for students and visitors alike. Never gets old!',
-    createdAt: new Date('2023-10-18'),
+    createdAt: new Date('2024-12-30'),
   },
   {
     id: 'c5d6e7f8-9012-2345-def0-001122334455',
@@ -263,7 +263,7 @@ export const reviews: Review[] = [
     placeId: '6',
     rating: 4,
     comment: 'Fun way to get from one floor to another. The kids loved it!',
-    createdAt: new Date('2023-10-22'),
+    createdAt: new Date('2025-01-03'),
   },
   {
     id: 'd6e7f890-1234-3456-ef01-112233445566',
@@ -271,6 +271,6 @@ export const reviews: Review[] = [
     placeId: '6',
     rating: 5,
     comment: 'A real highlight of the campus. The slide is both fun and iconic!',
-    createdAt: new Date('2023-10-27'),
+    createdAt: new Date('2025-01-08'),
   },
 ];

@@ -10,6 +10,7 @@ import {
 
 import Home from './pages/Home';
 import Map from './pages/Map';
+import Place from './pages/Place';
 
 import { UserProvider } from './contexts/UserContext';
 
@@ -19,6 +20,7 @@ export default function App() {
     <React.Fragment>
       <Route path="/" element={<Home />} />
       <Route path="/map" element={<Map />} />
+      <Route path="/:placeId" element={<Place />} />
     </React.Fragment>
   ))
 
