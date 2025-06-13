@@ -5,12 +5,14 @@ export default function PlaceSection(props: {
   startReview: () => void;
 }) {
 
+  console.log(props.place.name, props.place.name.length)
+
   return (
 
     <div className="max-w-2xl w-full h-full flex flex-col bg-white/95 rounded-3xl shadow-2xl p-8 relative border border-gray-200">
       <img src={props.place.imageUrl} alt={props.place.name} className="w-full h-64 object-cover rounded-2xl shadow-lg mb-6" />
       <div className="flex items-center justify-between mb-2">
-        <h1 className="text-3xl font-bold text-gray-900">{props.place.name}</h1>
+        <h1 style={{ fontSize: props.place.name.length > 12 ? 28 : 32 }} className={`text-3xl font-bold text-gray-900`}>{props.place.name}</h1>
         {props.place.reviews && (
           <div className="flex items-center bg-orange-50 rounded-full px-4 py-1 shadow text-orange-600 font-semibold text-lg">
             <span className="mr-1">★</span>{props.place.reviews.rating}

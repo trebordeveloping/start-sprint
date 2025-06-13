@@ -1,4 +1,3 @@
-
 import { Marker as LeafletMarker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import { useState, useEffect } from 'react';
@@ -146,7 +145,8 @@ export default function Marker({ place }: {
             <img
               src={place.imageUrl}
               alt={place.name}
-              className="w-full h-40 object-cover rounded-xl shadow-lg"
+              className={`w-full h-40 object-cover rounded-xl shadow-lg ${!isUnlocked ? 'blur-sm' : ''
+                } ${isRevealing ? 'animate-pulse' : ''}`}
             />
             {place.reviews && (<Rating />)}
             {/* Shimmer effect for revealing */}

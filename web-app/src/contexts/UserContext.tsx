@@ -137,6 +137,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       if (!prev) return null;
       return {
         ...prev,
+        credits: prev.credits + 5,
         reviews: [...(prev.reviews || []), newReview],
       };
     });

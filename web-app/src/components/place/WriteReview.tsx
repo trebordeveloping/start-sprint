@@ -60,12 +60,12 @@ export default function WriteReview({ visible, setVisible, place }: ReviewModalP
         {/* Review form */}
         <div style={{ padding: 24, paddingTop: 12 }}>
           {/* Star rating */}
-          <p className="mb-2">How was your overall experience?</p>
+          <p className="mb-2" style={{ color: '#374151' }}>How was your overall experience?</p>
           <StarRating
             rating={rating}
             setRating={setRating}
           />
-          <p className="mb-2">Does this place deserve to be on our platform?</p>
+          <p className="mb-2" style={{ color: '#374151' }}>Does this place deserve to be on our platform?</p>
           <PlatformRating
             value={platformRating}
             setValue={setPlatformRating}
